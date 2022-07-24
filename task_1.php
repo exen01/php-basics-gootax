@@ -275,3 +275,385 @@ function getHiddenCard($creditCardNumber, $starCount = 4)
 // END
 
 // task 44
+// BEGIN (write your solution here)
+function getAge($age)
+{
+    return floor($age);
+}
+// END
+
+// task 45
+// BEGIN (write your solution here)
+function isPensioner($age)
+{
+    return $age >= 60;
+}
+// END
+
+// task 46
+// BEGIN (write your solution here)
+function isMister($type)
+{
+    return $type === 'Mister';
+}
+// END
+
+// task 47
+// BEGIN (write your solution here)
+function isInternationalPhone($str)
+{
+    return $str[0] === '+';
+}
+// END
+
+// task 48
+// BEGIN (write your solution here)
+function isLeapYear($year)
+{
+    return ($year % 400 === 0) || (($year % 4 === 0) && ($year % 100 !== 0));
+}
+// END
+
+// task 49
+// BEGIN (write your solution here)
+function isPalindrome($word)
+{
+    return strrev(strtolower($word)) === strtolower($word);
+}
+
+function isNotPalindrome($word)
+{
+    return !isPalindrome($word);
+}
+// END
+
+// task 50
+// BEGIN (write your solution here)
+function isNeutralSoldier($armorColor, $shieldColor)
+{
+    return $armorColor !== 'red' && $shieldColor === 'black';
+}
+// END
+
+// task 51
+// BEGIN (write your solution here)
+function isFalsy($value)
+{
+    return $value == false;
+}
+// END
+
+// task 52
+// BEGIN (write your solution here)
+function guessNumber($number)
+{
+    if($number === 42){
+        return 'You win!';
+    }
+
+    return 'Try again!';
+}
+// END
+
+// task 53
+// BEGIN (write your solution here)
+function normalizeUrl($url)
+{
+    if(strpos($url, 'http://') === false){
+        return "https://{$url}";
+    }
+
+    return str_replace("http://", "https://", $url);
+}
+// END
+
+// task 54
+// BEGIN (write your solution here)
+function whoIsThisHouseToStarks($family)
+{
+    if($family === "Karstark" || $family === "Tully"){
+        return "friend";
+    }elseif($family === "Lannister" || $family === "Frey"){
+        return "enemy";
+    } else {
+        return "neutral";
+    }
+}
+// END
+
+// task 55
+// BEGIN (write your solution here)
+function flipFlop($value)
+{
+    return $value === 'flip' ? 'flop' : 'flip';
+}
+// END
+
+// task 56
+// BEGIN (write your solution here)
+function getNumberExplanation($number)
+{
+    switch($number){
+        case 666:
+            return 'devil number';
+        case 42:
+            return 'answer for everything';
+        case 7:
+            return 'prime number';
+        default:
+            return null;
+    }
+}
+// END
+
+// task 57
+// BEGIN (write your solution here)
+function generateAmount($goodsNumber, $auditCost)
+{
+    return $goodsNumber ?: $auditCost * 3;
+}
+// END
+
+// task 58
+function printNumbers($firstNumber)
+{
+    // BEGIN (write your solution here)
+    $i = $firstNumber;
+    while ($i >= 1){
+        print_r($i);
+        print_r("\n");
+        $i -= 1;
+    }
+    print_r('finished!');
+    // END
+}
+
+// task 59
+// BEGIN (write your solution here)
+function multiplyNumbersFromRange($start, $finish)
+{
+    $i = $start;
+    $result = 1;
+
+    while($i <= $finish){
+        $result *= $i;
+        $i += 1;
+    }
+
+    return $result;
+}
+// END
+
+// task 60
+// BEGIN (write your solution here)
+function joinNumbersFromRange($start, $finish)
+{
+    $result = '';
+    $i = $start;
+
+    while($i <= $finish){
+        $result = "{$result}{$i}";
+        $i += 1;
+    }
+
+    return $result;
+}
+// END
+
+// task 61
+// BEGIN (write your solution here)
+function printReversedWordBySymbol($word)
+{
+    $i = strlen($word) - 1;
+
+    while($i >= 0){
+        print_r("$word[$i]\n");
+        $i -= 1;
+    }
+}
+// END
+
+// task 62
+// BEGIN (write your solution here)
+function countChars($str, $char)
+{
+    $i = 0;
+    $count = 0;
+    while ($i < strlen($str)) {
+        if (strtolower($str[$i]) === strtolower($char)) {
+            // Считаем только подходящие символы
+            $count = $count + 1;
+        }
+        // Счетчик увеличивается в любом случае
+        $i = $i + 1;
+    }
+
+    return $count;
+}
+// END
+
+// task 63
+// BEGIN (write your solution here)
+function mysubstr($str, $len)
+{
+    $i = 0;
+    $result = '';
+
+    while($i < $len){
+        $currentChar = $str[$i];
+        $result = "{$result}{$currentChar}";
+        $i += 1;
+    }
+
+    return $result;
+}
+// END
+
+// task 64
+// BEGIN (write your solution here)
+function isArgumentsForSubstrCorrect($str, $index, $len)
+{
+    if($len < 0 || $index < 0 || $index >= strlen($str) || $index + $len > strlen($str)){
+        return false;
+    }
+
+    return true;
+}
+// END
+
+// task 65
+// BEGIN (write your solution here)
+function filterString($str, $char)
+{
+    $i = 0;
+    $result = '';
+    while($i < strlen($str)){
+
+        if($str[$i] === $char){
+            $i += 1;
+            continue;
+        }
+
+        $result .= $str[$i];
+        $i += 1;
+    }
+
+    return $result;
+}
+// END
+
+// task 66
+// BEGIN (write your solution here)
+function makeItFunny($str, $number)
+{
+    $i = 0;
+    $result = '';
+    while($i < strlen($str)){
+        if(($i+1) % $number === 0){
+            $result .= strtoupper($str[$i]);
+            $i += 1;
+            continue;
+        }
+
+        $result .= $str[$i];
+        $i += 1;
+    }
+
+    return $result;
+}
+// END
+
+// task 67
+// BEGIN (write your solution here)
+function hasChar($str, $char)
+{
+    $i = 0;
+    while($i < strlen($str)){
+        if($str[$i] === $char){
+            return true;
+        }
+
+        $i += 1;
+    }
+
+    return false;
+}
+// END
+
+// task 68
+// BEGIN (write your solution here)
+function sumOfSeries($start, $finish)
+{
+    $sum = 0;
+    for($i = $start; $i <= $finish; $i++){
+        $sum += $i;
+    }
+
+    return $sum;
+}
+// END
+
+// task 69
+function invertCase($text)
+{
+    // BEGIN (write your solution here)
+    $result = '';
+    for($i = 0; $i < mb_strlen($text); $i++){
+        if (mb_strtoupper(mb_substr($text, $i, 1)) == mb_substr($text, $i, 1)){
+            $result .= mb_strtolower(mb_substr($text, $i, 1));
+        } else {
+            $result .= mb_strtoupper(mb_substr($text, $i, 1));
+        }
+    }
+
+    return $result;
+    // END
+}
+
+// task 70
+// BEGIN (write your solution here)
+print_r(setlocale(LC_CTYPE, 0));
+// END
+
+// task 71
+function startsWith($text, $substr)
+{
+    // BEGIN (write your solution here)
+    if(mb_strpos($text, $substr) === 0){
+        return true;
+    }
+
+    return false;
+    // END
+}
+
+// task 72
+const SECONDS_IN_YEAR = 60 * 60 * 24 * 365;
+
+function getYear($timestamp)
+{
+    // BEGIN (write your solution here)
+    return (int) floor(($timestamp / SECONDS_IN_YEAR) + 1970);
+    // END
+}
+
+// task 73
+function getCustomDate($timestamp)
+{
+    // BEGIN (write your solution here)
+    return date('d/m/Y', $timestamp);
+    // END
+}
+
+// task 74
+// BEGIN (write your solution here)
+function getHexletBirthday()
+{
+    return mktime(0, 0, 0, 1, 1, 2012);
+}
+// END
+
+// task 75
+// BEGIN (write your solution here)
+print_r(date_default_timezone_get());
+// END
